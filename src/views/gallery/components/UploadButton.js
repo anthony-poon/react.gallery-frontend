@@ -1,6 +1,7 @@
 import React from 'react';
-import axios from 'axios';
-
+import $ from "jquery";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
 export default class UploadButton extends React.Component {
     constructor(props) {
         super(props);
@@ -8,6 +9,7 @@ export default class UploadButton extends React.Component {
 
     onBtnClick() {
         $("#js-upload").val("").trigger("click");
+
     }
 
     componentDidMount() {
@@ -25,7 +27,7 @@ export default class UploadButton extends React.Component {
                 <button type={"button"} className={"btn btn-primary btn-rd shadow-lg"} onClick={() => {
                     this.onBtnClick();
                 }}>
-                    <i className="fas fa-camera"/>
+                    <FontAwesomeIcon icon={faCamera} />
                 </button>
                 <input type="file" id={"js-upload"} className="d-none" accept="image/png,image/jpeg,image/bmp" name="upload[]" multiple/>
             </div>

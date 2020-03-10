@@ -2,7 +2,7 @@ import React from 'react'
 import loadingBar from "../images/loading_bar.svg";
 import "intersection-observer";
 import PropTypes from "prop-types";
-export default class GalleryItem extends React.Component{
+export default class ThumbnailView extends React.Component{
     state = {
         isObserved: false,
         isLoaded: false
@@ -45,8 +45,8 @@ export default class GalleryItem extends React.Component{
             isObserved
         } = this.state;
         return (
-            <div className={"gallery-item"} ref={this.ref}>
-                <div className={"gallery-item__img-container hoverable"} onClick={() => {
+            <div className={"gallery-item card mb-3"} ref={this.ref}>
+                <div className={"gallery-item__img-container hoverable card-img-top"} onClick={() => {
                     onClick(id)
                 }}>
                     <img className={isLoaded ? "gallery-item__img-loader invisible" : "gallery-item__img-loader visible"} src={loadingBar}/>
@@ -56,8 +56,8 @@ export default class GalleryItem extends React.Component{
                         })
                     }}/>
                 </div>
-                <div className={"gallery-item__body"}>
-                    <div className={"gallery-item__header text-primary"}>
+                <div className={"gallery-item__body card-body"}>
+                    <div className={"gallery-item__header text-primary h6 text-monospace"}>
                         { header }
                     </div>
                     <div className={"gallery-item__content row"}>
@@ -71,12 +71,12 @@ export default class GalleryItem extends React.Component{
     }
 }
 
-GalleryItem.defaultProps = {
+ThumbnailView.defaultProps = {
     header: "Untitled",
     owner: "Anonymous"
 };
 
-GalleryItem.propTypes = {
+ThumbnailView.propTypes = {
     id: PropTypes.number.isRequired,
     onClick: PropTypes.func.isRequired,
     thumbnail: PropTypes.string.isRequired,

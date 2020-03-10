@@ -1,0 +1,13 @@
+.dialog-modal__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1072;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(60, 60, 60, 0.8);
+}
+
+.dialog-modal__container {
+    background-color: white;;
+}

@@ -1,0 +1,28 @@
+.gallery-item-view__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    .gallery-item-view__image {
+        flex-grow: 1;
+        background-color: rgba(0, 0, 0, 0.1);
+        position: relative;
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        img.loader {
+            height: 150px;
+            width: 150px;
+        }
+    }
+    .gallery-item-view__content {
+        background-color: white;
+    }
+}

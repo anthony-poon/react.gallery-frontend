@@ -1,0 +1,201 @@
+@import "~bootstrap";
+
+html {
+    color: #505050;
+}
+
+#top-navbar {
+    border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    a {
+        text-decoration: none;
+        color: $text-muted;
+    }
+    #navbar-header {
+        font-size: 1.25rem;
+    }
+    .navbar-scroll {
+        overflow-x: auto;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+    }
+    .submenu-border {
+        border-width: 5px;
+    }
+}
+
+#side-menu {
+    border-right: rgba(0, 0, 0, 0.1) 1px solid;
+    height: 100vh;
+    .menu-item {
+        transition: color 0.4s;
+        display: flex;
+        font-size: $h6-font-size;
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            flex-grow: 0;
+            flex-shrink: 0;
+            .material-icons {
+            }
+        }
+        .text-wrapper {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+#side-menu.collapsing {
+    transition: none;
+    display: none;
+}
+
+#inline-side-menu {
+    border-right: rgba(0, 0, 0, 0.1) 1px solid;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: $white;
+    .menu-item {
+        transition: color 0.4s;
+        display: flex;
+        font-size: $h6-font-size;
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            flex-grow: 0;
+            flex-shrink: 0;
+            .material-icons {
+            }
+        }
+        .text-wrapper {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+#inline-side-menu.collapsing {
+    transition: none;
+    display: none;
+}
+
+
+.submenu {
+    position: fixed;
+    right: 0;
+    background-color: white;
+    z-index: 999;
+    font-size: 12px;
+    border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+    border-left: rgba(0, 0, 0, 0.1) 1px solid;
+    border-right: rgba(0, 0, 0, 0.1) 1px solid;
+    .item:first-child {
+        margin-top: 16px;
+    }
+    .item:last-child {
+        margin-bottom: 16px;
+    }
+    .item {
+        position: relative;
+        width: 240px;
+        height: 40px;
+        padding-left: 24px;
+        display: flex;
+        align-items: center;
+        border-collapse: collapse;
+    }
+}
+
+.hoverable {
+    cursor: pointer;
+}
+
+.btn-rd {
+    padding: 4px;
+    border-radius: 50%;
+    width:  2.75rem;
+    height: 2.75rem;
+}
+
+.btn-like-bar {
+    display: flex;
+    align-items: center;
+    .btn-like:first-of-type {
+        margin-left: -8px;
+    }
+    .btn-like:last-of-type {
+        margin-right: -8px;
+    }
+}
+
+.btn-like {
+    transition: color 0.4s, background-color 0.4s;
+    cursor: pointer;
+    padding: 4px 12px 4px 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-like.disabled {
+    cursor: initial;
+}
+
+.btn-like.text-default:hover:not(.disabled), .btn-like.text-secondary:hover:not(.disabled) {
+    color: $primary !important;;
+}
+
+.btn-like.text-danger:hover:not(.disabled) {
+    color: $secondary;
+}
+
+.btn-like.text-primary:hover:not(.disabled) {
+    color: $secondary !important;
+}
+
+a.btn-like {
+    text-decoration: none;
+}
+
+a.btn-like:hover {
+    text-decoration: none;
+}
+
+.dataTables_wrapper.dt-bootstrap4 {
+    .dt-buttons.btn-group {
+        .btn {
+            border-radius: 0;
+            background-color: transparent;
+            border: 0;
+            //border: 4px transparent solid;
+            color: #007bff;
+            border-collapse: collapse;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .btn.disabled {
+            color: #CCCCCC;
+        }
+        .btn:hover:not(.disabled), .btn:active:not(.disabled) {
+            color: white;
+            background-color: #007bff;
+            //border-left: 4px #007bff solid;
+        }
+    }
+    table {
+        tr.selected {
+            transition: background-color 0.4s;
+            background-color: #3A99FC;
+            color: $light;
+            td {
+                border-color: #3A99FC;
+            }
+        }
+        tr:hover {
+            cursor: pointer;
+        }
+    }
+}
