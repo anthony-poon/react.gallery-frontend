@@ -3,7 +3,7 @@ import axios from "axios";
 import AsyncTextButton from "../AsyncTextButton";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons"
-import {faHeart as fasHeart, faShareAlt, faTrashAlt} from "@fortawesome/free-solid-svg-icons"
+import {faHeart as fasHeart, faShareAlt, faTrashAlt, faLayerGroup} from "@fortawesome/free-solid-svg-icons"
 import loadingBar from "../../images/loading_bar.svg";
 import PropTypes from "prop-types";
 import "./main.scss";
@@ -33,9 +33,11 @@ export default class GalleryItemView extends React.Component{
     }
 
     onLoadingBarLoaded() {
-        this.setState({
-            imageIndex: 0
-        });
+        setTimeout(() => {
+            this.setState({
+                imageIndex: 0
+            });
+        }, 700);
     }
 
     onImageLoad() {
@@ -60,8 +62,14 @@ export default class GalleryItemView extends React.Component{
         return (
             <div className={"gallery-item-view__body h-100"}>
                 <div id={"js-image-container"} className={"gallery-item-view__image " + (assets.length > 1 ? "hoverable" : "") } onClick={() => this.cycleImages()}>
+                    <div className={"gallery-item-view__page-index py-1 px-2 text-white"}>
+                        <FontAwesomeIcon icon={faLayerGroup}/>
+                        <small className={"ml-2"}>
+                            {imageIndex + 1} of {assets.length}
+                        </small>
+                    </div>
                     <img className={ isLoaded ? "invisible loader" : "visible loader"} src={loadingBar} onLoad={() => this.onLoadingBarLoaded()} alt={"loading-bar"}/>
-                    <img alt={"high-res-images"} className={ isLoaded  ? "visible" : "invisible"} src={assets[imageIndex]} onLoad={() => this.onImageLoad()}/>
+                    <img alt={"high-res-images"} className={ isLoaded  ? "visible gallery-item-view__high-res" : "invisible gallery-item-view__high-res"} src={assets[imageIndex]} onLoad={() => this.onImageLoad()}/>
                 </div>
                 <div className={"gallery-item-view__content px-3 py-3"}>
                     <div className={"row"}>

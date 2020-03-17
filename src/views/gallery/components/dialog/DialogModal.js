@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import $ from "jquery";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
-
+import "./main.scss";
 export default class DialogModal extends React.Component{
     componentDidUpdate(prevProps, prevState, snapshot) {
         const {
@@ -50,12 +50,10 @@ export default class DialogModal extends React.Component{
                             </div>
                         </div>
                         <div className={"dialog-modal__content flex-grow-1"}>
-                            { children }
+                            { !!isVisible && children }
                         </div>
                     </div>
                 </div>
-
-
             </div>
         );
     }

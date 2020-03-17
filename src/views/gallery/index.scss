@@ -1,6 +1,10 @@
 @import "../../common";
-@import "components/dialog/main";
+
 .gallery-app {
+    .gallery-app__intro {
+        font-size: 1.2rem;
+        font-weight: lighter;
+    }
     .gallery-item {
         .gallery-item__img-container {
             background-color: rgba(128, 128, 128, 1);
@@ -25,9 +29,19 @@
         }
     }
 
-    .gallery-app__upload-button {
+    .gallery-app__header {
         position: fixed;
-        right: 30px;
-        bottom: 30px;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: $zindex-fixed;
+    }
+
+    .gallery-app__footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: $zindex-fixed;
     }
 }
